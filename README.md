@@ -14,6 +14,14 @@
 - View a blog with comments
 - comment on blog
 
+## How to get started
+- your machine must have latest versions of `node.js`, `mongodb` and `git`.
+- do `git clone https://github.com/yogesh-kansal/blog-It..git`.
+- go to `blog-it.` directory.
+- go to `/blog-it./client` and do `npm install` in terminal.
+- go to `/blog-it./backend` and do `npm install` in terminal.
+- to start client/server do npm `start` in their respective termianls.
+
 ## Demo images
 ### Home page -
 <p align="center">
