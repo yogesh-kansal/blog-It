@@ -1,5 +1,7 @@
 # blog-It.
 `blog-it` is a MERN stack application for blogs.
+- `client url` https://blog-website-yogesh.netlify.app
+- `server-url` https://blog-server-yogesh.herokuapp.com
 
 ## Tech Stack
 `node.js`, `express.js`, `mongoose`, `jwt-auth`, `react.js`, `Bootstrap5`, `reactstrap`
