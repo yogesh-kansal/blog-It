@@ -5,7 +5,7 @@ const Comment = ({comment}) => {
         <div className="row">
           <div className="col-9 me-auto"><h6 className="messageSender">{comment.author}</h6></div>
           <div className="col-3 ms-auto"><span className="postDate col-5">
-            {new Date(comment.createdAt).toDateString()}
+            {comment.createdAt?new Date(comment.createdAt).toDateString():new Date().toDateString()}
           </span></div>
 
         </div>

@@ -51,7 +51,7 @@ const SingleBlog = () =>  {
     })
   };
 
-  const handleUpdate = async () => {
+  const handleUpdate =  () => {
     axios.patch(config.serverUrl+`/blogs/${path}`, {title, description: desc}, {
       headers: {
         "Authorization": 'Bearer ' + accesstoken
@@ -61,6 +61,7 @@ const SingleBlog = () =>  {
       setBlog(res.data);
       setTitle(res.data.title);
       setDesc(res.data.description);
+      setUpdateMode(prev => !prev);
     })
     .catch(err => {
       if(err.response) alert(err.response.data);
@@ -123,7 +124,7 @@ const SingleBlog = () =>  {
           </div>
 
           {updateMode?<div className="row mt-1">
-            <Button type="btn btn-primary" onClick={() => handleUpdate} >Update</Button>
+            <Button type="btn btn-primary" onClick={() => handleUpdate()} >Update</Button>
           </div>:null}
         </div>
 

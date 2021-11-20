@@ -38,12 +38,14 @@ exports.getBlog=catchAsync(async (req,res,next) => {
 
 
 exports.modifyBlog=catchAsync(async (req,res,next) => {
-    let modified = await Blog.findByIdAndUpdate(req.params.blogId, {
+    await Blog.findByIdAndUpdate(req.params.blogId, {
         $set:
             req.body
         },
         {runValidators: true}
     );
+
+    let modified = await  Blog.findById(req.params.blogId);
 
     res.status(200).json(modified);
 });
