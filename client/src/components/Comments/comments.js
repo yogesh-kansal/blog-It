@@ -13,18 +13,20 @@ const Comments = ({blogId}) => {
     const [New, setNew] = useState('');
 
     useEffect(() => {
-        axios.get(config.serverUrl+`/comments/${blogId}`, {
-            headers: {
-              "Authorization": 'Bearer ' + accesstoken
-            }
-        })
-        .then(res => {
-            setComments(res.data);
-        })
-        .catch(err => {
-            if(err.response) alert(err.response.data);
-            else if(err.message) alert(err.message);
-        })
+        if(blogId) {
+            axios.get(config.serverUrl+`/comments/${blogId}`, {
+                headers: {
+                "Authorization": 'Bearer ' + accesstoken
+                }
+            })
+            .then(res => {
+                setComments(res.data);
+            })
+            .catch(err => {
+                if(err.response) alert(err.response.data);
+                else if(err.message) alert(err.message);
+            })
+        }
     }, [blogId, accesstoken]);
 
     const addComment=() => {
